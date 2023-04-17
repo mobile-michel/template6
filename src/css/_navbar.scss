@@ -1,11 +1,10 @@
 /* Header */
-nav[aria-label=Primary] {
+[aria-label=Primary] {
     background-color: var(--primary);
     box-shadow: 1px 1px 5px 0px var(--primary-hover);
     position: sticky;
     top: 0;
     width: 100%;
-    height: auto;
 }
 
 [aria-label=Primary] li{
@@ -25,7 +24,6 @@ nav[aria-label=Primary] {
 }
 
 /* Nav menu */
-
 #menu {
     padding: 0;
 }
