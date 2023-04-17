@@ -1,12 +1,19 @@
-<div class="header">
+<!-- Navigation bar -->
+<div class="header" aria-label="Primary">
+
+    <!-- Logo -->
     <a href="/" class="logo">Home</a>
+
+    <!-- Hamburger icon -->
     <input class="side-menu" type="checkbox" id="side-menu" />
     <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+
+    <!-- Menu -->
     <div class="nav">
-        <ul class="menu">
+        <ul id="menu" class="menu">
             {% for nav in collections.primary %}
-            <li{% if page.url==nav.url %} aria-current="page" {% endif %}><a href="{{ nav.url }}">{{ nav.data.title }}</a></li>
-                {% endfor %}
+            <li{% if page.url == nav.url %} aria-current="page"{% endif %}><a href="{{ nav.url }}">{{ nav.data.title }}</a></li>
+            {% endfor %}
         </ul>
     </div>
 </div>
