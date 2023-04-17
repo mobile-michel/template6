@@ -1,0 +1,138 @@
+/* Header */
+nav[aria-label=Primary] {
+    background-color: var(--primary);
+    box-shadow: 1px 1px 5px 0px var(--primary-hover);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: auto;
+}
+
+[aria-label=Primary] li{
+    list-style: none;
+}
+
+[aria-label=Primary] a {
+    text-decoration: none;
+}
+
+/* Logo */
+.logo{
+    display: inline-block;
+    color: var(--primary-inverse);
+    font-size: 3em;
+    margin-left: 10px;
+}
+
+/* Nav menu */
+
+#menu {
+    padding: 0;
+}
+
+.nav{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: var(--primary);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+
+[aria-label=Primary] .menu a{
+    display: block;
+    padding: 30px;
+    color: var(--primary-inverse);
+}
+
+[aria-label=Primary] a:hover{
+    color: var(--primary-hover);
+}
+
+[aria-current] {
+    font-weight: bold;
+    background-color: var(--secondary-focus);
+}
+
+/* Menu Icon */
+.hamb{
+    cursor: pointer;
+    float: right;
+    padding: 40px 20px;
+}
+
+.hamb-line {
+    background: var(--primary-inverse);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+}
+
+.hamb-line::before,
+.hamb-line::after{
+    background: var(--primary-inverse);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.hamb-line::before{
+    top: 5px;
+}
+
+.hamb-line::after{
+    top: -5px;
+}
+
+.side-menu {
+    display: none;
+}
+
+/* Toggle menu icon */
+.side-menu:checked ~ div{
+    max-height: 100%;
+}
+
+.side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top:0;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top:0;
+}
+
+/* Responsiveness */
+@media (min-width: 768px) {
+    .nav{
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+        background-color: transparent;
+    }
+
+    .menu li{
+        float: left;
+    }
+
+    .menu a:hover{
+        background-color: transparent;
+        color: var(--primary-hover);
+    }
+
+    [aria-label=Primary] .hamb{
+        display: none;
+    }
+}
